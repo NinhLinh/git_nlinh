@@ -1,0 +1,31 @@
+//Git Rebase
+
+1. Đầu tiên dùng lệnh git log để xem lịch sử commit
+git log --oneline       //xem danh sach commit
+
+2. Tiếp theo xác định số lượng commit mà các bạn muốn gộp thành một là dùng lệnh git rebase
+git rebase -i HEAD~3      //edit 3 commits from HEAD $ number of commit  (3)
+
+3. Từ dòng thứ 2, thay từ pick thành s vào lưu lại như dưới
+x    // to delete
+i    // to insert
+
+enter Esc to exit insert mode
+
+:w     //to save 
+:q     // to exit
+
+4. Sau khi bạn lưu lại ở bước trên thì một cửa 
+sổ soạn thảo nữa hiển thị để bạn thay đổi mô tả của commit được gộp này.  và lưu lại
+x    // to delete
+i    // to insert
+
+enter Esc to exit insert mode
+
+:w     //to save 
+:q     // to exit
+
+5. Cuối cùng chúng ta push các thay đổi mới lên server.
+Lúc này chúng ta cần thêm option -f để GIT ghi đè lên các commit cũ ở trên server.
+ 
+ git push -f origin [Tên nhánh]
